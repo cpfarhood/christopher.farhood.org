@@ -27,3 +27,27 @@ spec:
   resources:
     requests: 
       storage: 64Gi
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: wwwold-lindsay.farhood.org
+  labels:
+    name: wwwold-lindsay.farhood.org
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  mountOptions:
+  - soft
+  - nfsvers=4.1
+  - rsize=32768
+  - wsize=32768
+  nfs:
+    path: /mnt/pool0/sites/lindsay-farhood-org
+    server: spielberg.farhoodliquor.dmz
