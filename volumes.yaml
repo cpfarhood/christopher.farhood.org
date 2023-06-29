@@ -22,7 +22,7 @@ metadata:
     name: wwwdata-christopher.farhood.org
 spec:
   capacity:
-    storage: 1Ti
+    storage: 1Gi
   volumeMode: Filesystem
   accessModes:
   - ReadWriteMany
@@ -47,8 +47,8 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
-  storageClassName: "longhorn"
+  storageClassName: "nfs"
   resources:
     requests: 
-      storage: 1Ti
+      storage: 1Gi
   volumeName: wwwdata-christopher.farhood.org
