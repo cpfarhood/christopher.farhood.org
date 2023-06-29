@@ -52,7 +52,12 @@ spec:
         volumeMounts:
         - name: wwwdata
           mountPath: /var/www/html
+        - name: wwwold
+          mountPath: /var/www/htmlold
       volumes:
       - name: wwwdata
         persistentVolumeClaim:
           claimName: wwwdata
+      - name: wwwold
+        persistentVolumeClaim:
+          claimName: wwwold
