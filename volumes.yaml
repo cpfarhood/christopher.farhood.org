@@ -51,3 +51,18 @@ spec:
   nfs:
     path: /mnt/pool0/sites/lindsay-farhood-org
     server: spielberg.farhoodliquor.dmz
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wwwold
+  labels:
+    name: wwwold
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: "nfs"
+  resources:
+    requests: 
+      storage: 1Gi
+  volumeName: wwwold-lindsay.farhood.org
