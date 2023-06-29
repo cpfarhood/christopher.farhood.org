@@ -15,26 +15,11 @@ spec:
 
 ---
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: wwwdata
-  labels:
-    name: wwwdata
-spec:
-  accessModes:
-  - ReadWriteMany
-  storageClassName: longhorn
-  resources:
-    requests: 
-      storage: 64Gi
-
----
-apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: wwwold-christopher.farhood.org
+  name: wwwdata-christopher.farhood.org
   labels:
-    name: wwwold-christopher.farhood.org
+    name: wwwdata-christopher.farhood.org
 spec:
   capacity:
     storage: 1Gi
@@ -51,13 +36,14 @@ spec:
   nfs:
     path: /mnt/pool0/sites/christopher-farhood-org
     server: spielberg.farhoodliquor.dmz
+
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: wwwold
+  name: wwwdata
   labels:
-    name: wwwold
+    name: wwwdata
 spec:
   accessModes:
   - ReadWriteMany
@@ -65,4 +51,4 @@ spec:
   resources:
     requests: 
       storage: 1Gi
-  volumeName: wwwold-christopher.farhood.org
+  volumeName: wwwdata-christopher.farhood.org
