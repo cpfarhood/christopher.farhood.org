@@ -50,14 +50,15 @@ spec:
         - containerPort: 80
           name: http
         volumeMounts:
-        - name: wwwdata
+        - name: wwwdata-old
           mountPath: /var/www/html
-        - name: wwwold
-          mountPath: /var/www/htmlold
+        - name: wwwdata
+          mountPath: /var/www/html-new
       volumes:
       - name: wwwdata
         persistentVolumeClaim:
           claimName: wwwdata
-      - name: wwwold
-        persistentVolumeClaim:
-          claimName: wwwold
+      - name: wwwdata-old
+        nfs:
+          path: /mnt/pool0/sites/farhood.org/christopher
+          server: spielberg.farhoodliquor.dmz
