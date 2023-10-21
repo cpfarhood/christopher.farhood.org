@@ -60,5 +60,5 @@ spec:
           claimName: wwwdata
       - name: wwwdata-old
         nfs:
-          path: /mnt/pool0/sites/farhood.org/christopher
+          path: /mnt/pool0/sites/christopher-farhood-org
           server: spielberg.farhoodliquor.dmz
