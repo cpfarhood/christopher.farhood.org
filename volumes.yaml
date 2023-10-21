@@ -12,43 +12,20 @@ spec:
   resources:
     requests: 
       storage: 8Gi
-
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: wwwdata-christopher.farhood.org
-  labels:
-    name: wwwdata-christopher.farhood.org
-spec:
-  capacity:
-    storage: 1Gi
-  volumeMode: Filesystem
-  accessModes:
-  - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: nfs
-  mountOptions:
-  - soft
-  - nfsvers=4.1
-  - rsize=32768
-  - wsize=32768
-  nfs:
-    path: /mnt/pool0/sites/christopher-farhood-org
-    server: spielberg.farhoodliquor.dmz
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wwwdata
+  namespace: christopher-farhood-org
   labels:
     name: wwwdata
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
   accessModes:
-  - ReadWriteMany
-  storageClassName: "nfs"
+  - ReadWriteOnce
+  storageClassName: longhorn
   resources:
     requests: 
-      storage: 1Gi
-  volumeName: wwwdata-christopher.farhood.org
+      storage: 128Gi
