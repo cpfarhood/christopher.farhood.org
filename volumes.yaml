@@ -8,7 +8,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: longhorn
+  storageClassName: rook-ceph-block-nvme
   resources:
     requests: 
       storage: 8Gi
@@ -24,8 +24,8 @@ metadata:
     kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
   accessModes:
-  - ReadWriteMany
-  storageClassName: longhorn
+  - ReadWriteOnce
+  storageClassName: rook-ceph-block-nvme
   resources:
     requests: 
       storage: 128Gi
