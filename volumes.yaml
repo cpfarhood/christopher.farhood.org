@@ -5,6 +5,8 @@ metadata:
   name: dbdata
   labels:
     name: dbdata
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
   accessModes:
   - ReadWriteOnce
