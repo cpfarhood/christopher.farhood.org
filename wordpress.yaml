@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: wordpress
-        image: wordpress:latest
+        image: wordpress:php8.3
         env:
         - name: WORDPRESS_DB_HOST
           value: mariadb
@@ -53,6 +53,9 @@ spec:
           limits:
             memory: "2Gi"
             cpu: "500m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
         ports:
         - containerPort: 80
           name: http

@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: mariadb
-        image: mariadb:latest
+        image: mariadb:lts
         env:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
@@ -64,8 +64,14 @@ spec:
           mountPath: "/var/lib/mysql"
         resources:
           requests:
-            memory: "512Mi"
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
             cpu: "500m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runasNonRoot: true
       volumes:
       - name: dbdata
         persistentVolumeClaim:
