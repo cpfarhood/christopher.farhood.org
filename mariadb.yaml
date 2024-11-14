@@ -5,14 +5,14 @@ kind: Service
 metadata:
    name: mariadb
    labels:
-     app: wordpress
+     app.kubernetes.io/name: wordpress
 spec:
   ports:
   - port: 3306
     targetPort: 3306
     name: mariadb
   selector:
-    app: wordpress
+    app.kubernetes.io/name: wordpress
     tier: db
   type: ClusterIP
 
@@ -24,18 +24,18 @@ kind: Deployment
 metadata:
   name: mariadb
   labels:
-    app: wordpress
+    app.kubernetes.io/name: wordpress
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app.kubernetes.io/name: wordpress
       tier: db
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
+        app.kubernetes.io/name: wordpress
         tier: db
     spec:
       containers:
