@@ -55,7 +55,6 @@ spec:
             cpu: "500m"
         securityContext:
           allowPrivilegeEscalation: false
-          runAsNonRoot: true
         ports:
         - containerPort: 80
           name: http

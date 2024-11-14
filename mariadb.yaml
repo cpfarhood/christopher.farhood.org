@@ -71,7 +71,6 @@ spec:
             cpu: "500m"
         securityContext:
           allowPrivilegeEscalation: false
-          runasNonRoot: true
       volumes:
       - name: dbdata
         persistentVolumeClaim:
