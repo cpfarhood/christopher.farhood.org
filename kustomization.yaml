@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: christopher-farhood-org
 resources:
   - volumes.yaml
-  - deployment-mariadb.yaml
-  - service-mariadb.yaml
-  - wordpress.yaml
-  - ingress.yaml
+#  - deployment-mariadb.yaml
+#  - service-mariadb.yaml
+#  - wordpress.yaml
+# - ingress.yaml
   - sealedsecret-mariadb-pass.json
