@@ -1,9 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: christopher.farhood.org
-  annotations:
-    traefik.ingress.kubernetes.io/router.middlewares: traefik-redirect@kubernetescrd
+  name: christopher-farhood-org
 spec:
   ingressClassName: traefik-external
   rules:
