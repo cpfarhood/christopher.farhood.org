@@ -9,7 +9,6 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: longhorn-perpetual
   resources:
     requests: 
       storage: 8Gi
@@ -25,7 +24,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
-  storageClassName: longhorn-perpetual
+  storageClassName: ceph-filesystem
   resources:
     requests: 
       storage: 128Gi
