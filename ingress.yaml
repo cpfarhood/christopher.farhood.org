@@ -20,4 +20,4 @@ spec:
   tls:
   - hosts:
     - christopher.farhood.org
-    secretName: farhood-org-cert-letsencrypt-prod
+    secretName: christopher-farhood-org-ingress-tls
